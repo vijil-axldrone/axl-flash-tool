@@ -2,10 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QProcess>
 #include <QNetworkAccessManager>
+#include <QProcess>
 
 class SerialWorker;
+class EspFlashWorker;
 
 namespace Ui {
 class MainWindow;
@@ -28,6 +29,8 @@ private slots:
     void updateOta();
     void cancelOperation();
     void appendLog(const QString &message);
+
+private slots:
     void handleProcessOutput();
     void handleProcessError();
     void handleProcessFinished(int exitCode, QProcess::ExitStatus exitStatus);
@@ -37,6 +40,7 @@ private:
     QProcess *activeProcess;
     SerialWorker *activeWorker;
     QNetworkReply *activeReply;
+    EspFlashWorker *activeEspWorker;
     
     QString m_validatedDirPath;
     QString m_stmAppPath;

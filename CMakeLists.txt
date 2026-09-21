@@ -10,7 +10,19 @@ set(CMAKE_AUTOUIC ON)
 
 find_package(Qt6 COMPONENTS Core Gui Widgets SerialPort Network REQUIRED)
 
-include_directories(src)
+include(FetchContent)
+FetchContent_Declare(
+  esp-serial-flasher
+  GIT_REPOSITORY https://github.com/espressif/esp-serial-flasher.git
+  GIT_TAG        master
+)
+FetchContent_MakeAvailable(esp-serial-flasher)
+
+include_directories(
+    src
+    stm32_api/include
+    ${CMAKE_BINARY_DIR}/_deps/esp-serial-flasher-src/include
+)
 
 set(PROJECT_SOURCES
     src/main.cpp
@@ -23,17 +35,34 @@ set(PROJECT_SOURCES
     src/packet_serial.h
     src/serialworker.cpp
     src/serialworker.h
+    src/esp_flasher/EspFlashWorker.cpp
+    src/esp_flasher/esp_loader_port.cpp
 )
 
 add_executable(AxlFlash ${PROJECT_SOURCES})
 
-target_link_libraries(AxlFlash PRIVATE
-    Qt6::Core
-    Qt6::Gui
-    Qt6::Widgets
-    Qt6::SerialPort
-    Qt6::Network
-)
+
+
+# On Linux, link libCubeProgrammer_API.so explicitly to avoid Qt library conflicts.
+if(WIN32)
+    target_link_libraries(AxlFlash PRIVATE
+        Qt6::Core
+        Qt6::Gui
+        Qt6::Widgets
+        Qt6::SerialPort
+        Qt6::Network
+        flasher
+    )
+else()
+    target_link_libraries(AxlFlash PRIVATE
+        Qt6::Core
+        Qt6::Gui
+        Qt6::Widgets
+        Qt6::SerialPort
+        Qt6::Network
+        flasher
+    )
+endif()
 
 if(WIN32)
     set_target_properties(AxlFlash PROPERTIES WIN32_EXECUTABLE TRUE)

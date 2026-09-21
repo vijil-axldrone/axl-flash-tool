@@ -146,7 +146,7 @@ void SerialWorker::run()
                     } else if (cmd == "ack_ip_address") {
                         ipAddress = obj["ip_address"].toString();
                         if (ipAddress == "0.0.0.0" || ipAddress.isEmpty()) {
-                            emit errorOccurred("No IP Address assigned. Please check device WiFi.");
+                            emit errorOccurred("No IP Address assigned. Please check device Network.");
                             keepRunning = false;
                         } else {
                             emit logMessage("Found IP: " + ipAddress);

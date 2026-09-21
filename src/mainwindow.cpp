@@ -16,12 +16,16 @@
 #include <QTextCursor>
 #include <QScrollBar>
 
+#include "esp_flasher/EspFlashWorker.h"
+#include "stm32_flasher/StmFlashWorker.h"
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
     activeProcess(nullptr),
     activeWorker(nullptr),
-    activeReply(nullptr)
+    activeReply(nullptr),
+    activeEspWorker(nullptr)
 {
     ui->setupUi(this);
 
@@ -53,9 +57,15 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
+    if (activeEspWorker) {
+        activeEspWorker->terminate();
+        activeEspWorker->wait();
+    }
     if (activeProcess) {
-        activeProcess->kill();
-        activeProcess->waitForFinished();
+        if (activeProcess->state() == QProcess::Running) {
+            activeProcess->kill();
+            activeProcess->waitForFinished();
+        }
         delete activeProcess;
     }
     delete ui;
@@ -186,44 +196,45 @@ QString MainWindow::getSelectedPort()
 
 void MainWindow::flashEsp()
 {
+    if (activeEspWorker || activeProcess || activeWorker || activeReply) {
+        QMessageBox::warning(this, "Busy", "An operation is already running.");
+        return;
+    }
+
     QString port = getSelectedPort();
     if (port.isEmpty()) {
         QMessageBox::warning(this, "Error", "No port selected!");
         return;
     }
 
-    if (activeProcess) {
-        QMessageBox::warning(this, "Busy", "A process is already running.");
-        return;
-    }
+    activeEspWorker = new EspFlashWorker(port, m_espBootloaderPath, m_espPartitionsPath, m_espBootAppPath, m_espAppPath, this);
 
-    activeProcess = new QProcess(this);
-    connect(activeProcess, &QProcess::readyReadStandardOutput, this, &MainWindow::handleProcessOutput);
-    connect(activeProcess, &QProcess::readyReadStandardError, this, &MainWindow::handleProcessError);
-    connect(activeProcess, &QProcess::finished, this, &MainWindow::handleProcessFinished);
+    connect(activeEspWorker, &EspFlashWorker::logMessage, this, &MainWindow::appendLog);
+    connect(activeEspWorker, &EspFlashWorker::progress, this, [this](int value, int maximum) {
+        ui->progressBar->setMaximum(maximum);
+        ui->progressBar->setValue(value);
+    });
+    connect(activeEspWorker, &EspFlashWorker::finishedWithSuccess, this, [this]() {
+        appendLog("ESP32 Flashing successful!");
+        QMessageBox::information(this, "Success", "ESP32 Flashing completed successfully!");
+        activeEspWorker->deleteLater();
+        activeEspWorker = nullptr;
+    });
+    connect(activeEspWorker, &EspFlashWorker::finishedWithError, this, [this](const QString &err) {
+        appendLog(err);
+        QMessageBox::critical(this, "Error", "ESP32 Flashing failed:\n" + err);
+        activeEspWorker->deleteLater();
+        activeEspWorker = nullptr;
+    });
 
-    QStringList args;
-    args << "--chip" << "esp32"
-         << "--port" << port
-#ifdef Q_OS_WIN
-         << "--baud" << "921600"
-#else
-         << "--baud" << "921600"
-#endif
-         << "write-flash"
-         << "0x1000" << m_espBootloaderPath
-         << "0x8000" << m_espPartitionsPath
-         << "0xe000" << m_espBootAppPath
-         << "0x10000" << m_espAppPath;
-
-    appendLog("Starting esptool on port " + port + "...");
-    activeProcess->start("esptool", args);
+    ui->progressBar->setValue(0);
+    activeEspWorker->start();
 }
 
 void MainWindow::flashStm()
 {
-    if (activeProcess) {
-        QMessageBox::warning(this, "Busy", "A process is already running.");
+    if (activeEspWorker || activeProcess || activeWorker || activeReply) {
+        QMessageBox::warning(this, "Busy", "An operation is already running.");
         return;
     }
 
@@ -233,10 +244,15 @@ void MainWindow::flashStm()
     connect(activeProcess, &QProcess::finished, this, &MainWindow::handleProcessFinished);
 
     QString portArg = ui->radioDfu->isChecked() ? "USB1" : "SWD";
-
     QStringList args;
-    args << "-c" << QString("port=%1").arg(portArg) << "-w" << m_stmAppPath << "0x08000000" << "-v";
+    if(ui->radioDfu->isChecked())
+        args << "-c" << "port=USB1" << "mode=UR" << "-w" << m_stmAppPath << "0x08000000" << "-v";
+    else
+        args << "-c" << "port=SWD" << "freq=1000" << "mode=UR" << "-w" << m_stmAppPath << "0x08000000" << "-v";
 
+    ui->progressBar->setMaximum(100);
+    ui->progressBar->setValue(0);
+    ui->progressBar->setFormat("Connecting... %p%");
     appendLog(QString("Starting STM32_Programmer_CLI (Mode: %1)...").arg(portArg));
     activeProcess->start("STM32_Programmer_CLI", args);
 }
@@ -245,8 +261,23 @@ void MainWindow::handleProcessOutput()
 {
     if (activeProcess) {
         QString out = QString::fromUtf8(activeProcess->readAllStandardOutput());
-        // Strip ANSI color codes
         out.remove(QRegularExpression("\\x1B\\[[0-9;]*[a-zA-Z]"));
+        
+        if (out.contains("Download in Progress", Qt::CaseInsensitive) || out.contains("Downloading", Qt::CaseInsensitive)) {
+            ui->progressBar->setFormat("Downloading... %p%");
+        } else if (out.contains("Verifying", Qt::CaseInsensitive) || out.contains("Verification", Qt::CaseInsensitive)) {
+            ui->progressBar->setFormat("Verifying... %p%");
+            ui->progressBar->setValue(0);
+        }
+
+        QRegularExpression regex("(\\d+)\\s*%");
+        QRegularExpressionMatchIterator it = regex.globalMatch(out);
+        while (it.hasNext()) {
+            QRegularExpressionMatch match = it.next();
+            int percent = match.captured(1).toInt();
+            ui->progressBar->setValue(percent);
+        }
+
         ui->logTextEdit->moveCursor(QTextCursor::End);
         ui->logTextEdit->insertPlainText(out);
         ui->logTextEdit->ensureCursorVisible();
@@ -257,7 +288,6 @@ void MainWindow::handleProcessError()
 {
     if (activeProcess) {
         QString err = QString::fromUtf8(activeProcess->readAllStandardError());
-        // Strip ANSI color codes
         err.remove(QRegularExpression("\\x1B\\[[0-9;]*[a-zA-Z]"));
         ui->logTextEdit->moveCursor(QTextCursor::End);
         ui->logTextEdit->insertPlainText(err);
@@ -269,12 +299,21 @@ void MainWindow::handleProcessFinished(int exitCode, QProcess::ExitStatus exitSt
 {
     if (exitStatus == QProcess::CrashExit) {
         appendLog("Process crashed.");
+        QMessageBox::critical(this, "Error", "STM32 Flashing process crashed.");
     } else {
         appendLog(QString("Process finished with code %1").arg(exitCode));
+        if (exitCode == 0) {
+            QMessageBox::information(this, "Success", "STM32 Flashing completed successfully!");
+        } else {
+            QMessageBox::critical(this, "Error", QString("STM32 Flashing failed (Code %1). Check logs for details.").arg(exitCode));
+        }
     }
+    ui->progressBar->setFormat("%p%"); // Reset format
     activeProcess->deleteLater();
     activeProcess = nullptr;
 }
+
+// End of flash functions
 
 void MainWindow::updateOta()
 {
@@ -290,7 +329,7 @@ void MainWindow::updateOta()
 
 void MainWindow::startOtaSequence(const QString &portName)
 {
-    if (activeWorker || activeProcess || activeReply) {
+    if (activeWorker || activeEspWorker || activeProcess || activeReply) {
         QMessageBox::warning(this, "Busy", "An operation is already running.");
         return;
     }
@@ -344,14 +383,23 @@ void MainWindow::startOtaSequence(const QString &portName)
             });
 
             connect(activeReply, &QNetworkReply::finished, this, [this, manager](){
-                if (activeReply->error() == QNetworkReply::NoError) {
+                bool success = (activeReply->error() == QNetworkReply::NoError);
+                if (success) {
                     appendLog("OTA Upload Successful!");
+                    QMessageBox::information(this, "Success", "ESP32 OTA completed successfully! Automatically starting STM32 DFU flash...");
                 } else {
                     appendLog("OTA Upload failed: " + activeReply->errorString());
+                    QMessageBox::critical(this, "Error", "ESP32 OTA failed:\n" + activeReply->errorString());
                 }
+                
                 activeReply->deleteLater();
                 activeReply = nullptr;
                 manager->deleteLater();
+
+                if (success) {
+                    ui->radioDfu->setChecked(true); // Ensure DFU mode
+                    flashStm(); // Start STM32 flash
+                }
             });
         }
         delete ipAddress;
@@ -363,6 +411,13 @@ void MainWindow::startOtaSequence(const QString &portName)
 void MainWindow::cancelOperation()
 {
     bool cancelled = false;
+    if (activeEspWorker) {
+        activeEspWorker->terminate(); // Brute force stop
+        activeEspWorker->wait();
+        activeEspWorker->deleteLater();
+        activeEspWorker = nullptr;
+        cancelled = true;
+    }
     if (activeProcess) {
         activeProcess->kill();
         cancelled = true;
@@ -378,5 +433,7 @@ void MainWindow::cancelOperation()
 
     if (cancelled) {
         appendLog("\n[Operation cancelled by user]");
+        ui->progressBar->setValue(0);
+        ui->progressBar->setFormat("%p%");
     }
 }
