@@ -3,3 +3,4 @@ build/
 *.user
 *.exe
 .DS_Store
+win-deps/
