@@ -155,6 +155,45 @@ AxlFlash_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AxlFlash_autogen.dir/build.make CMakeFiles/AxlFlash_autogen.dir/build
 .PHONY : AxlFlash_autogen/fast
 
+#=============================================================================
+# Target rules for targets named flasher
+
+# Build rule for target.
+flasher: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 flasher
+.PHONY : flasher
+
+# fast build rule for target.
+flasher/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/esp-serial-flasher-build/CMakeFiles/flasher.dir/build.make _deps/esp-serial-flasher-build/CMakeFiles/flasher.dir/build
+.PHONY : flasher/fast
+
+#=============================================================================
+# Target rules for targets named flasher_autogen_timestamp_deps
+
+# Build rule for target.
+flasher_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 flasher_autogen_timestamp_deps
+.PHONY : flasher_autogen_timestamp_deps
+
+# fast build rule for target.
+flasher_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/esp-serial-flasher-build/CMakeFiles/flasher_autogen_timestamp_deps.dir/build.make _deps/esp-serial-flasher-build/CMakeFiles/flasher_autogen_timestamp_deps.dir/build
+.PHONY : flasher_autogen_timestamp_deps/fast
+
+#=============================================================================
+# Target rules for targets named flasher_autogen
+
+# Build rule for target.
+flasher_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 flasher_autogen
+.PHONY : flasher_autogen
+
+# fast build rule for target.
+flasher_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/esp-serial-flasher-build/CMakeFiles/flasher_autogen.dir/build.make _deps/esp-serial-flasher-build/CMakeFiles/flasher_autogen.dir/build
+.PHONY : flasher_autogen/fast
+
 AxlFlash_autogen/mocs_compilation.o: AxlFlash_autogen/mocs_compilation.cpp.o
 .PHONY : AxlFlash_autogen/mocs_compilation.o
 
@@ -202,6 +241,54 @@ src/crc.s: src/crc.c.s
 src/crc.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AxlFlash.dir/build.make CMakeFiles/AxlFlash.dir/src/crc.c.s
 .PHONY : src/crc.c.s
+
+src/esp_flasher/EspFlashWorker.o: src/esp_flasher/EspFlashWorker.cpp.o
+.PHONY : src/esp_flasher/EspFlashWorker.o
+
+# target to build an object file
+src/esp_flasher/EspFlashWorker.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AxlFlash.dir/build.make CMakeFiles/AxlFlash.dir/src/esp_flasher/EspFlashWorker.cpp.o
+.PHONY : src/esp_flasher/EspFlashWorker.cpp.o
+
+src/esp_flasher/EspFlashWorker.i: src/esp_flasher/EspFlashWorker.cpp.i
+.PHONY : src/esp_flasher/EspFlashWorker.i
+
+# target to preprocess a source file
+src/esp_flasher/EspFlashWorker.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AxlFlash.dir/build.make CMakeFiles/AxlFlash.dir/src/esp_flasher/EspFlashWorker.cpp.i
+.PHONY : src/esp_flasher/EspFlashWorker.cpp.i
+
+src/esp_flasher/EspFlashWorker.s: src/esp_flasher/EspFlashWorker.cpp.s
+.PHONY : src/esp_flasher/EspFlashWorker.s
+
+# target to generate assembly for a file
+src/esp_flasher/EspFlashWorker.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AxlFlash.dir/build.make CMakeFiles/AxlFlash.dir/src/esp_flasher/EspFlashWorker.cpp.s
+.PHONY : src/esp_flasher/EspFlashWorker.cpp.s
+
+src/esp_flasher/esp_loader_port.o: src/esp_flasher/esp_loader_port.cpp.o
+.PHONY : src/esp_flasher/esp_loader_port.o
+
+# target to build an object file
+src/esp_flasher/esp_loader_port.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AxlFlash.dir/build.make CMakeFiles/AxlFlash.dir/src/esp_flasher/esp_loader_port.cpp.o
+.PHONY : src/esp_flasher/esp_loader_port.cpp.o
+
+src/esp_flasher/esp_loader_port.i: src/esp_flasher/esp_loader_port.cpp.i
+.PHONY : src/esp_flasher/esp_loader_port.i
+
+# target to preprocess a source file
+src/esp_flasher/esp_loader_port.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AxlFlash.dir/build.make CMakeFiles/AxlFlash.dir/src/esp_flasher/esp_loader_port.cpp.i
+.PHONY : src/esp_flasher/esp_loader_port.cpp.i
+
+src/esp_flasher/esp_loader_port.s: src/esp_flasher/esp_loader_port.cpp.s
+.PHONY : src/esp_flasher/esp_loader_port.s
+
+# target to generate assembly for a file
+src/esp_flasher/esp_loader_port.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AxlFlash.dir/build.make CMakeFiles/AxlFlash.dir/src/esp_flasher/esp_loader_port.cpp.s
+.PHONY : src/esp_flasher/esp_loader_port.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -309,13 +396,22 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... AxlFlash_autogen"
 	@echo "... AxlFlash_autogen_timestamp_deps"
+	@echo "... flasher_autogen"
+	@echo "... flasher_autogen_timestamp_deps"
 	@echo "... AxlFlash"
+	@echo "... flasher"
 	@echo "... AxlFlash_autogen/mocs_compilation.o"
 	@echo "... AxlFlash_autogen/mocs_compilation.i"
 	@echo "... AxlFlash_autogen/mocs_compilation.s"
 	@echo "... src/crc.o"
 	@echo "... src/crc.i"
 	@echo "... src/crc.s"
+	@echo "... src/esp_flasher/EspFlashWorker.o"
+	@echo "... src/esp_flasher/EspFlashWorker.i"
+	@echo "... src/esp_flasher/EspFlashWorker.s"
+	@echo "... src/esp_flasher/esp_loader_port.o"
+	@echo "... src/esp_flasher/esp_loader_port.i"
+	@echo "... src/esp_flasher/esp_loader_port.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

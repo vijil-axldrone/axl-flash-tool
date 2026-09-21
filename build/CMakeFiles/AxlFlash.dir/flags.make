@@ -3,15 +3,15 @@
 
 # compile C with /usr/bin/cc
 # compile CXX with /usr/bin/c++
-C_DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_SERIALPORT_LIB -DQT_WIDGETS_LIB
+C_DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_SERIALPORT_LIB -DQT_WIDGETS_LIB -DSERIAL_FLASHER_BOOT_HOLD_TIME_MS=50 -DSERIAL_FLASHER_BOOT_INVERT=false -DSERIAL_FLASHER_LOG_LEVEL=2 -DSERIAL_FLASHER_RESET_HOLD_TIME_MS=100 -DSERIAL_FLASHER_RESET_INVERT=false -DSERIAL_FLASHER_WRITE_BLOCK_RETRIES=3
 
-C_INCLUDES = -I"/home/vijil/Desktop/My Flash tools/axlflash/build/AxlFlash_autogen/include" -I"/home/vijil/Desktop/My Flash tools/axlflash/src" -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtSerialPort -isystem /usr/include/x86_64-linux-gnu/qt6/QtNetwork
+C_INCLUDES = -I"/home/vijil/Desktop/My Flash tools/axlflash/build/AxlFlash_autogen/include" -I"/home/vijil/Desktop/My Flash tools/axlflash/src" -I"/home/vijil/Desktop/My Flash tools/axlflash/stm32_api/include" -I"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/include" -I"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/port" -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtSerialPort -isystem /usr/include/x86_64-linux-gnu/qt6/QtNetwork
 
 C_FLAGS = -fPIC
 
-CXX_DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_SERIALPORT_LIB -DQT_WIDGETS_LIB
+CXX_DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_SERIALPORT_LIB -DQT_WIDGETS_LIB -DSERIAL_FLASHER_BOOT_HOLD_TIME_MS=50 -DSERIAL_FLASHER_BOOT_INVERT=false -DSERIAL_FLASHER_LOG_LEVEL=2 -DSERIAL_FLASHER_RESET_HOLD_TIME_MS=100 -DSERIAL_FLASHER_RESET_INVERT=false -DSERIAL_FLASHER_WRITE_BLOCK_RETRIES=3
 
-CXX_INCLUDES = -I"/home/vijil/Desktop/My Flash tools/axlflash/build/AxlFlash_autogen/include" -I"/home/vijil/Desktop/My Flash tools/axlflash/src" -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtSerialPort -isystem /usr/include/x86_64-linux-gnu/qt6/QtNetwork
+CXX_INCLUDES = -I"/home/vijil/Desktop/My Flash tools/axlflash/build/AxlFlash_autogen/include" -I"/home/vijil/Desktop/My Flash tools/axlflash/src" -I"/home/vijil/Desktop/My Flash tools/axlflash/stm32_api/include" -I"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/include" -I"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/port" -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtSerialPort -isystem /usr/include/x86_64-linux-gnu/qt6/QtNetwork
 
 CXX_FLAGS = -std=gnu++17 -fPIC
 

@@ -1,0 +1,37 @@
+_deps/esp-serial-flasher-build/CMakeFiles/flasher.dir/src/efuse/esp_loader_efuse_field_info.c.o: \
+ /home/vijil/Desktop/My\ Flash\ tools/axlflash/build/_deps/esp-serial-flasher-src/src/efuse/esp_loader_efuse_field_info.c \
+ /usr/include/stdc-predef.h \
+ /home/vijil/Desktop/My\ Flash\ tools/axlflash/build/_deps/esp-serial-flasher-src/include/esp_loader_efuse.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
+ /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+ /usr/include/features.h /usr/include/features-time64.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/bits/timesize.h \
+ /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/long-double.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+ /usr/include/x86_64-linux-gnu/bits/time64.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
+ /home/vijil/Desktop/My\ Flash\ tools/axlflash/build/_deps/esp-serial-flasher-src/include/esp_loader_error.h \
+ /home/vijil/Desktop/My\ Flash\ tools/axlflash/build/_deps/esp-serial-flasher-src/include/esp_loader.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h \
+ /home/vijil/Desktop/My\ Flash\ tools/axlflash/build/_deps/esp-serial-flasher-src/include/esp_loader_io.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
+ /home/vijil/Desktop/My\ Flash\ tools/axlflash/build/_deps/esp-serial-flasher-src/include/md5_ctx.h \
+ /home/vijil/Desktop/My\ Flash\ tools/axlflash/build/_deps/esp-serial-flasher-src/include/efuse/esp32/esp_loader_efuse_table.h \
+ /home/vijil/Desktop/My\ Flash\ tools/axlflash/build/_deps/esp-serial-flasher-src/include/efuse/esp32c2/esp_loader_efuse_table.h \
+ /home/vijil/Desktop/My\ Flash\ tools/axlflash/build/_deps/esp-serial-flasher-src/include/efuse/esp32c3/esp_loader_efuse_table.h \
+ /home/vijil/Desktop/My\ Flash\ tools/axlflash/build/_deps/esp-serial-flasher-src/include/efuse/esp32c5/esp_loader_efuse_table.h \
+ /home/vijil/Desktop/My\ Flash\ tools/axlflash/build/_deps/esp-serial-flasher-src/include/efuse/esp32c6/esp_loader_efuse_table.h \
+ /home/vijil/Desktop/My\ Flash\ tools/axlflash/build/_deps/esp-serial-flasher-src/include/efuse/esp32c61/esp_loader_efuse_table.h \
+ /home/vijil/Desktop/My\ Flash\ tools/axlflash/build/_deps/esp-serial-flasher-src/include/efuse/esp32h2/esp_loader_efuse_table.h \
+ /home/vijil/Desktop/My\ Flash\ tools/axlflash/build/_deps/esp-serial-flasher-src/include/efuse/esp32p4/esp_loader_efuse_table.h \
+ /home/vijil/Desktop/My\ Flash\ tools/axlflash/build/_deps/esp-serial-flasher-src/include/efuse/esp32s2/esp_loader_efuse_table.h \
+ /home/vijil/Desktop/My\ Flash\ tools/axlflash/build/_deps/esp-serial-flasher-src/include/efuse/esp32s3/esp_loader_efuse_table.h

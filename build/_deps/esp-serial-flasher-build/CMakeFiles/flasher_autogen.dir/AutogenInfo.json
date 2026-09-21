@@ -1,0 +1,292 @@
+{
+	"BUILD_DIR" : "/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-build/flasher_autogen",
+	"CMAKE_BINARY_DIR" : "/home/vijil/Desktop/My Flash tools/axlflash/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src",
+	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
+	"CMAKE_LIST_FILES" : 
+	[
+		"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/CMakeLists.txt",
+		"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/efuse/efuse_tables.cmake"
+	],
+	"CMAKE_SOURCE_DIR" : "/home/vijil/Desktop/My Flash tools/axlflash",
+	"DEP_FILE" : "/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-build/flasher_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "flasher_autogen/timestamp",
+	"HEADERS" : [],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-build/flasher_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-build/flasher_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"SERIAL_FLASHER_BOOT_HOLD_TIME_MS=50",
+		"SERIAL_FLASHER_BOOT_INVERT=false",
+		"SERIAL_FLASHER_LOG_LEVEL=2",
+		"SERIAL_FLASHER_RESET_HOLD_TIME_MS=100",
+		"SERIAL_FLASHER_RESET_INVERT=false",
+		"SERIAL_FLASHER_WRITE_BLOCK_RETRIES=3"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/include",
+		"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/port",
+		"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/private_include",
+		"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/port/common",
+		"/usr/include/c++/13",
+		"/usr/include/x86_64-linux-gnu/c++/13",
+		"/usr/include/c++/13/backward",
+		"/usr/lib/gcc/x86_64-linux-gnu/13/include",
+		"/usr/local/include",
+		"/usr/include/x86_64-linux-gnu",
+		"/usr/include"
+	],
+	"MOC_MACRO_NAMES" : 
+	[
+		"Q_OBJECT",
+		"Q_GADGET",
+		"Q_GADGET_EXPORT",
+		"Q_NAMESPACE",
+		"Q_NAMESPACE_EXPORT"
+	],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/c++",
+		"-std=gnu++17",
+		"-dM",
+		"-E",
+		"-c",
+		"/usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-build/flasher_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 4,
+	"PARSE_CACHE_FILE" : "/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-build/CMakeFiles/flasher_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/usr/lib/qt6/libexec/moc",
+	"QT_UIC_EXECUTABLE" : "/usr/lib/qt6/libexec/uic",
+	"QT_VERSION_MAJOR" : 6,
+	"QT_VERSION_MINOR" : 4,
+	"SETTINGS_FILE" : "/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-build/CMakeFiles/flasher_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/efuse/esp32/esp_loader_efuse_table.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/efuse/esp32c2/esp_loader_efuse_table.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/efuse/esp32c3/esp_loader_efuse_table.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/efuse/esp32c5/esp_loader_efuse_table.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/efuse/esp32c6/esp_loader_efuse_table.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/efuse/esp32c61/esp_loader_efuse_table.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/efuse/esp32h2/esp_loader_efuse_table.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/efuse/esp32h2/esp_loader_efuse_table_v0.0_v1.1.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/efuse/esp32p4/esp_loader_efuse_table.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/efuse/esp32p4/esp_loader_efuse_table_rev1.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/efuse/esp32s2/esp_loader_efuse_table.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/efuse/esp32s3/esp_loader_efuse_table.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/efuse/esp_loader_efuse_field_info.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/esp_loader.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/esp_loader_efuse.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/esp_loader_efuse_burn.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/esp_loader_efuse_chips.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/esp_loader_efuse_coding.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/esp_loader_efuse_keys.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/esp_loader_efuse_utility.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/esp_targets.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/md5_hash.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/protocol_sdio.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/protocol_serial.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/protocol_spi.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/protocol_uart.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/slip.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/stubs/esp_stub_bundled.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/stubs/esp_stub_esp32.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/stubs/esp_stub_esp32c2.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/stubs/esp_stub_esp32c3.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/stubs/esp_stub_esp32c5.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/stubs/esp_stub_esp32c6.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/stubs/esp_stub_esp32c61.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/stubs/esp_stub_esp32h2.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/stubs/esp_stub_esp32p4.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/stubs/esp_stub_esp32p4rev1.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/stubs/esp_stub_esp32s2.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/stubs/esp_stub_esp32s3.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/stubs/esp_stub_esp32s31.c",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/src/stubs/esp_stub_esp8266.c",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}

@@ -13,6 +13,7 @@
 #define __INTMAX_C(c) c ## L
 #define __CHAR_BIT__ 8
 #define __UINT8_MAX__ 0xff
+#define SERIAL_FLASHER_RESET_INVERT false
 #define __SCHAR_WIDTH__ 8
 #define __WINT_MAX__ 0xffffffffU
 #define __FLT32_MIN_EXP__ (-125)
@@ -174,6 +175,7 @@
 #define __GNUG__ 13
 #define __LONG_LONG_MAX__ 0x7fffffffffffffffLL
 #define __SIZEOF_SIZE_T__ 8
+#define SERIAL_FLASHER_WRITE_BLOCK_RETRIES 3
 #define __BFLT16_HAS_INFINITY__ 1
 #define __FLT64X_MIN_EXP__ (-16381)
 #define __SIZEOF_WINT_T__ 4
@@ -182,6 +184,7 @@
 #define __cpp_initializer_lists 200806L
 #define __FLT32_MAX_EXP__ 128
 #define ABI_ID "ELF"
+#define SERIAL_FLASHER_RESET_HOLD_TIME_MS 100
 #define __cpp_hex_float 201603L
 #define __GXX_ABI_VERSION 1018
 #define __FLT_MIN_EXP__ (-125)
@@ -278,6 +281,7 @@
 #define __INT_FAST16_MAX__ 0x7fffffffffffffffL
 #define __GCC_CONSTRUCTIVE_SIZE 64
 #define __FLT64_DIG__ 15
+#define SERIAL_FLASHER_LOG_LEVEL 2
 #define __UINT_FAST32_MAX__ 0xffffffffffffffffUL
 #define __UINT_LEAST64_TYPE__ long unsigned int
 #define __FLT16_EPSILON__ 9.76562500000000000000000000000000000e-4F16
@@ -328,6 +332,7 @@
 #define __FLT64X_MAX__ 1.18973149535723176502126385303097021e+4932F64x
 #define __FLT16_HAS_INFINITY__ 1
 #define __STDCPP_DEFAULT_NEW_ALIGNMENT__ 16
+#define SERIAL_FLASHER_BOOT_INVERT false
 #define __SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)
 #define __code_model_small__ 1
 #define __GCC_ATOMIC_LONG_LOCK_FREE 2
@@ -408,6 +413,7 @@
 #define __cpp_runtime_arrays 198712L
 #define __FLT32_DIG__ 6
 #define __UINT64_TYPE__ long unsigned int
+#define SERIAL_FLASHER_BOOT_HOLD_TIME_MS 50
 #define __UINT32_C(c) c ## U
 #define __cpp_alias_templates 200704L
 #define __FLT_DENORM_MIN__ 1.40129846432481707092372958328991613e-45F

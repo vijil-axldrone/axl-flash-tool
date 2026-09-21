@@ -1,0 +1,3 @@
+/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-subbuild/CMakeFiles/esp-serial-flasher-populate.dir
+/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-subbuild/CMakeFiles/edit_cache.dir
+/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-subbuild/CMakeFiles/rebuild_cache.dir

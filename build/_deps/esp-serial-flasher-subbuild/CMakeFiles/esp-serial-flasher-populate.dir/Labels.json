@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-subbuild/CMakeFiles/esp-serial-flasher-populate"
+		},
+		{
+			"file" : "/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-subbuild/CMakeFiles/esp-serial-flasher-populate.rule"
+		},
+		{
+			"file" : "/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-subbuild/CMakeFiles/esp-serial-flasher-populate-complete.rule"
+		},
+		{
+			"file" : "/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-subbuild/esp-serial-flasher-populate-prefix/src/esp-serial-flasher-populate-stamp/esp-serial-flasher-populate-build.rule"
+		},
+		{
+			"file" : "/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-subbuild/esp-serial-flasher-populate-prefix/src/esp-serial-flasher-populate-stamp/esp-serial-flasher-populate-configure.rule"
+		},
+		{
+			"file" : "/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-subbuild/esp-serial-flasher-populate-prefix/src/esp-serial-flasher-populate-stamp/esp-serial-flasher-populate-download.rule"
+		},
+		{
+			"file" : "/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-subbuild/esp-serial-flasher-populate-prefix/src/esp-serial-flasher-populate-stamp/esp-serial-flasher-populate-install.rule"
+		},
+		{
+			"file" : "/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-subbuild/esp-serial-flasher-populate-prefix/src/esp-serial-flasher-populate-stamp/esp-serial-flasher-populate-mkdir.rule"
+		},
+		{
+			"file" : "/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-subbuild/esp-serial-flasher-populate-prefix/src/esp-serial-flasher-populate-stamp/esp-serial-flasher-populate-patch.rule"
+		},
+		{
+			"file" : "/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-subbuild/esp-serial-flasher-populate-prefix/src/esp-serial-flasher-populate-stamp/esp-serial-flasher-populate-test.rule"
+		},
+		{
+			"file" : "/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-subbuild/esp-serial-flasher-populate-prefix/src/esp-serial-flasher-populate-stamp/esp-serial-flasher-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"esp-serial-flasher-populate"
+		],
+		"name" : "esp-serial-flasher-populate"
+	}
+}

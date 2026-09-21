@@ -11,6 +11,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.28.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeSystem.cmake"
+  "_deps/esp-serial-flasher-src/CMakeLists.txt"
+  "_deps/esp-serial-flasher-src/src/efuse/efuse_tables.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/Qt6/3rdparty/kwin/FindXKB.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/Qt6/FindWrapAtomic.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/Qt6/FindWrapOpenGL.cmake"
@@ -138,7 +140,11 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.28/Modules/Compiler/GNU-C.cmake"
   "/usr/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake"
   "/usr/share/cmake-3.28/Modules/Compiler/GNU.cmake"
+  "/usr/share/cmake-3.28/Modules/ExternalProject/shared_internal_commands.cmake"
   "/usr/share/cmake-3.28/Modules/FeatureSummary.cmake"
+  "/usr/share/cmake-3.28/Modules/FetchContent.cmake"
+  "/usr/share/cmake-3.28/Modules/FetchContent/CMakeLists.cmake.in"
+  "/usr/share/cmake-3.28/Modules/FindGit.cmake"
   "/usr/share/cmake-3.28/Modules/FindOpenGL.cmake"
   "/usr/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake"
   "/usr/share/cmake-3.28/Modules/FindPackageMessage.cmake"
@@ -166,9 +172,12 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
+  "_deps/esp-serial-flasher-subbuild/CMakeLists.txt"
   "CMakeFiles/AxlFlash_autogen.dir/AutogenInfo.json"
   ".qt/QtDeploySupport.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "_deps/esp-serial-flasher-build/CMakeFiles/flasher_autogen.dir/AutogenInfo.json"
+  "_deps/esp-serial-flasher-build/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -176,4 +185,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/AxlFlash.dir/DependInfo.cmake"
   "CMakeFiles/AxlFlash_autogen_timestamp_deps.dir/DependInfo.cmake"
   "CMakeFiles/AxlFlash_autogen.dir/DependInfo.cmake"
+  "_deps/esp-serial-flasher-build/CMakeFiles/flasher.dir/DependInfo.cmake"
+  "_deps/esp-serial-flasher-build/CMakeFiles/flasher_autogen_timestamp_deps.dir/DependInfo.cmake"
+  "_deps/esp-serial-flasher-build/CMakeFiles/flasher_autogen.dir/DependInfo.cmake"
   )

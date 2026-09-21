@@ -160,6 +160,34 @@ CMakeFiles/AxlFlash.dir/src/serialworker.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AxlFlash.dir/src/serialworker.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/vijil/Desktop/My Flash tools/axlflash/src/serialworker.cpp" -o CMakeFiles/AxlFlash.dir/src/serialworker.cpp.s
 
+CMakeFiles/AxlFlash.dir/src/esp_flasher/EspFlashWorker.cpp.o: CMakeFiles/AxlFlash.dir/flags.make
+CMakeFiles/AxlFlash.dir/src/esp_flasher/EspFlashWorker.cpp.o: /home/vijil/Desktop/My\ Flash\ tools/axlflash/src/esp_flasher/EspFlashWorker.cpp
+CMakeFiles/AxlFlash.dir/src/esp_flasher/EspFlashWorker.cpp.o: CMakeFiles/AxlFlash.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/vijil/Desktop/My Flash tools/axlflash/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/AxlFlash.dir/src/esp_flasher/EspFlashWorker.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AxlFlash.dir/src/esp_flasher/EspFlashWorker.cpp.o -MF CMakeFiles/AxlFlash.dir/src/esp_flasher/EspFlashWorker.cpp.o.d -o CMakeFiles/AxlFlash.dir/src/esp_flasher/EspFlashWorker.cpp.o -c "/home/vijil/Desktop/My Flash tools/axlflash/src/esp_flasher/EspFlashWorker.cpp"
+
+CMakeFiles/AxlFlash.dir/src/esp_flasher/EspFlashWorker.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AxlFlash.dir/src/esp_flasher/EspFlashWorker.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/vijil/Desktop/My Flash tools/axlflash/src/esp_flasher/EspFlashWorker.cpp" > CMakeFiles/AxlFlash.dir/src/esp_flasher/EspFlashWorker.cpp.i
+
+CMakeFiles/AxlFlash.dir/src/esp_flasher/EspFlashWorker.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AxlFlash.dir/src/esp_flasher/EspFlashWorker.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/vijil/Desktop/My Flash tools/axlflash/src/esp_flasher/EspFlashWorker.cpp" -o CMakeFiles/AxlFlash.dir/src/esp_flasher/EspFlashWorker.cpp.s
+
+CMakeFiles/AxlFlash.dir/src/esp_flasher/esp_loader_port.cpp.o: CMakeFiles/AxlFlash.dir/flags.make
+CMakeFiles/AxlFlash.dir/src/esp_flasher/esp_loader_port.cpp.o: /home/vijil/Desktop/My\ Flash\ tools/axlflash/src/esp_flasher/esp_loader_port.cpp
+CMakeFiles/AxlFlash.dir/src/esp_flasher/esp_loader_port.cpp.o: CMakeFiles/AxlFlash.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/vijil/Desktop/My Flash tools/axlflash/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/AxlFlash.dir/src/esp_flasher/esp_loader_port.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AxlFlash.dir/src/esp_flasher/esp_loader_port.cpp.o -MF CMakeFiles/AxlFlash.dir/src/esp_flasher/esp_loader_port.cpp.o.d -o CMakeFiles/AxlFlash.dir/src/esp_flasher/esp_loader_port.cpp.o -c "/home/vijil/Desktop/My Flash tools/axlflash/src/esp_flasher/esp_loader_port.cpp"
+
+CMakeFiles/AxlFlash.dir/src/esp_flasher/esp_loader_port.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AxlFlash.dir/src/esp_flasher/esp_loader_port.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/vijil/Desktop/My Flash tools/axlflash/src/esp_flasher/esp_loader_port.cpp" > CMakeFiles/AxlFlash.dir/src/esp_flasher/esp_loader_port.cpp.i
+
+CMakeFiles/AxlFlash.dir/src/esp_flasher/esp_loader_port.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AxlFlash.dir/src/esp_flasher/esp_loader_port.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/vijil/Desktop/My Flash tools/axlflash/src/esp_flasher/esp_loader_port.cpp" -o CMakeFiles/AxlFlash.dir/src/esp_flasher/esp_loader_port.cpp.s
+
 # Object files for target AxlFlash
 AxlFlash_OBJECTS = \
 "CMakeFiles/AxlFlash.dir/AxlFlash_autogen/mocs_compilation.cpp.o" \
@@ -167,7 +195,9 @@ AxlFlash_OBJECTS = \
 "CMakeFiles/AxlFlash.dir/src/mainwindow.cpp.o" \
 "CMakeFiles/AxlFlash.dir/src/crc.c.o" \
 "CMakeFiles/AxlFlash.dir/src/packet_serial.c.o" \
-"CMakeFiles/AxlFlash.dir/src/serialworker.cpp.o"
+"CMakeFiles/AxlFlash.dir/src/serialworker.cpp.o" \
+"CMakeFiles/AxlFlash.dir/src/esp_flasher/EspFlashWorker.cpp.o" \
+"CMakeFiles/AxlFlash.dir/src/esp_flasher/esp_loader_port.cpp.o"
 
 # External object files for target AxlFlash
 AxlFlash_EXTERNAL_OBJECTS =
@@ -178,16 +208,19 @@ AxlFlash: CMakeFiles/AxlFlash.dir/src/mainwindow.cpp.o
 AxlFlash: CMakeFiles/AxlFlash.dir/src/crc.c.o
 AxlFlash: CMakeFiles/AxlFlash.dir/src/packet_serial.c.o
 AxlFlash: CMakeFiles/AxlFlash.dir/src/serialworker.cpp.o
+AxlFlash: CMakeFiles/AxlFlash.dir/src/esp_flasher/EspFlashWorker.cpp.o
+AxlFlash: CMakeFiles/AxlFlash.dir/src/esp_flasher/esp_loader_port.cpp.o
 AxlFlash: CMakeFiles/AxlFlash.dir/build.make
 AxlFlash: /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2
 AxlFlash: /usr/lib/x86_64-linux-gnu/libQt6SerialPort.so.6.4.2
 AxlFlash: /usr/lib/x86_64-linux-gnu/libQt6Network.so.6.4.2
+AxlFlash: _deps/esp-serial-flasher-build/libflasher.a
 AxlFlash: /usr/lib/x86_64-linux-gnu/libQt6Gui.so.6.4.2
 AxlFlash: /usr/lib/x86_64-linux-gnu/libGLX.so
 AxlFlash: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 AxlFlash: /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.4.2
 AxlFlash: CMakeFiles/AxlFlash.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/vijil/Desktop/My Flash tools/axlflash/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable AxlFlash"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/vijil/Desktop/My Flash tools/axlflash/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable AxlFlash"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AxlFlash.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

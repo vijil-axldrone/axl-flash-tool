@@ -185,7 +185,13 @@
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Network/Qt6NetworkTargets.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Network/Qt6NetworkTargets-none.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Network/Qt6NetworkAdditionalTargetInfo.cmake",
-		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Network/Qt6NetworkVersionlessTargets.cmake"
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Network/Qt6NetworkVersionlessTargets.cmake",
+		"/usr/share/cmake-3.28/Modules/FetchContent.cmake",
+		"/usr/share/cmake-3.28/Modules/ExternalProject/shared_internal_commands.cmake",
+		"/usr/share/cmake-3.28/Modules/FindGit.cmake",
+		"/usr/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake",
+		"/usr/share/cmake-3.28/Modules/FindPackageMessage.cmake",
+		"/usr/share/cmake-3.28/Modules/FetchContent/CMakeLists.cmake.in"
 	],
 	"CMAKE_SOURCE_DIR" : "/home/vijil/Desktop/My Flash tools/axlflash",
 	"DEP_FILE" : "/home/vijil/Desktop/My Flash tools/axlflash/build/AxlFlash_autogen/deps",
@@ -196,6 +202,12 @@
 			"/home/vijil/Desktop/My Flash tools/axlflash/src/crc.h",
 			"MU",
 			"UVLADIE3JM/moc_crc.cpp",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/src/esp_flasher/EspFlashWorker.h",
+			"MU",
+			"VAUXTDC6AN/moc_EspFlashWorker.cpp",
 			null
 		],
 		[
@@ -227,7 +239,13 @@
 		"QT_NETWORK_LIB",
 		"QT_NO_DEBUG",
 		"QT_SERIALPORT_LIB",
-		"QT_WIDGETS_LIB"
+		"QT_WIDGETS_LIB",
+		"SERIAL_FLASHER_BOOT_HOLD_TIME_MS=50",
+		"SERIAL_FLASHER_BOOT_INVERT=false",
+		"SERIAL_FLASHER_LOG_LEVEL=2",
+		"SERIAL_FLASHER_RESET_HOLD_TIME_MS=100",
+		"SERIAL_FLASHER_RESET_INVERT=false",
+		"SERIAL_FLASHER_WRITE_BLOCK_RETRIES=3"
 	],
 	"MOC_DEPEND_FILTERS" : 
 	[
@@ -239,6 +257,9 @@
 	"MOC_INCLUDES" : 
 	[
 		"/home/vijil/Desktop/My Flash tools/axlflash/src",
+		"/home/vijil/Desktop/My Flash tools/axlflash/stm32_api/include",
+		"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/include",
+		"/home/vijil/Desktop/My Flash tools/axlflash/build/_deps/esp-serial-flasher-src/port",
 		"/usr/include/x86_64-linux-gnu/qt6/QtCore",
 		"/usr/include/x86_64-linux-gnu/qt6",
 		"/usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++",
@@ -287,6 +308,16 @@
 	"SOURCES" : 
 	[
 		[ "/home/vijil/Desktop/My Flash tools/axlflash/src/crc.c", "MU", null ],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/src/esp_flasher/EspFlashWorker.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/vijil/Desktop/My Flash tools/axlflash/src/esp_flasher/esp_loader_port.cpp",
+			"MU",
+			null
+		],
 		[
 			"/home/vijil/Desktop/My Flash tools/axlflash/src/main.cpp",
 			"MU",
