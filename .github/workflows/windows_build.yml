@@ -1,0 +1,44 @@
+name: Windows Build
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  workflow_dispatch: # Allows manual triggering from the Actions tab
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - name: Install Qt
+      uses: jurplel/install-qt-action@v3
+      with:
+        version: '6.5.3'
+        host: 'windows'
+        target: 'desktop'
+        arch: 'win64_mingw'
+        modules: 'qtserialport'
+
+    - name: Configure CMake
+      run: cmake -B build -S . -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release
+
+    - name: Build Application
+      run: cmake --build build --config Release -j 4
+
+    - name: Package with windeployqt
+      run: |
+        mkdir deploy
+        cp build/AxlFlash.exe deploy/
+        windeployqt --release --compiler-runtime deploy/AxlFlash.exe
+      shell: bash
+
+    - name: Upload Windows Executable
+      uses: actions/upload-artifact@v4
+      with:
+        name: AxlFlash-Windows
+        path: deploy/
