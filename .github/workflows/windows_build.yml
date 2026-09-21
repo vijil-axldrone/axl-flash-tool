@@ -34,7 +34,7 @@ jobs:
       run: |
         mkdir deploy
         cp build/AxlFlash.exe deploy/
-        windeployqt --release deploy/AxlFlash.exe
+        windeployqt --dir deploy deploy/AxlFlash.exe
       shell: bash
 
     - name: Upload Windows Executable
