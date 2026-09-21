@@ -27,7 +27,7 @@ static void qt_deinit(esp_loader_port_t *port) {
 }
 
 static void qt_enter_bootloader(esp_loader_port_t *port) {
-    qt_port_t *p = container_of(port, qt_port_t, base);
+    qt_port_t *p = (qt_port_t *)port;
     p->serial->setDataTerminalReady(false); // DTR = 1
     p->serial->setRequestToSend(true);      // RTS = 0
     QThread::msleep(50);
@@ -37,20 +37,20 @@ static void qt_enter_bootloader(esp_loader_port_t *port) {
 }
 
 static void qt_reset_target(esp_loader_port_t *port) {
-    qt_port_t *p = container_of(port, qt_port_t, base);
+    qt_port_t *p = (qt_port_t *)port;
     p->serial->setDataTerminalReady(false); // DTR = 1
     p->serial->setRequestToSend(false);     // RTS = 1
     QThread::msleep(50);
 }
 
 static void qt_start_timer(esp_loader_port_t *port, uint32_t ms) {
-    qt_port_t *p = container_of(port, qt_port_t, base);
+    qt_port_t *p = (qt_port_t *)port;
     p->timeout_ms = ms;
     p->timer.start();
 }
 
 static uint32_t qt_remaining_time(esp_loader_port_t *port) {
-    qt_port_t *p = container_of(port, qt_port_t, base);
+    qt_port_t *p = (qt_port_t *)port;
     qint64 elapsed = p->timer.elapsed();
     if (elapsed >= p->timeout_ms) return 0;
     return p->timeout_ms - elapsed;
@@ -64,18 +64,18 @@ static void qt_log(esp_loader_port_t *port, esp_loader_log_level_t level,
                    const char *fmt, va_list args) {
     char buf[256];
     vsnprintf(buf, sizeof(buf), fmt, args);
-    qt_port_t *p = container_of(port, qt_port_t, base);
+    qt_port_t *p = (qt_port_t *)port;
     if (p->worker) emit p->worker->logMessage(QString::fromUtf8(buf).trimmed());
 }
 
 static esp_loader_error_t qt_change_transmission_rate(esp_loader_port_t *port, uint32_t rate) {
-    qt_port_t *p = container_of(port, qt_port_t, base);
+    qt_port_t *p = (qt_port_t *)port;
     p->serial->setBaudRate(rate);
     return ESP_LOADER_SUCCESS;
 }
 
 static esp_loader_error_t qt_write(esp_loader_port_t *port, const uint8_t *data, uint16_t size, uint32_t timeout) {
-    qt_port_t *p = container_of(port, qt_port_t, base);
+    qt_port_t *p = (qt_port_t *)port;
     p->serial->write((const char*)data, size);
     if (!p->serial->waitForBytesWritten(timeout)) {
         return ESP_LOADER_ERROR_TIMEOUT;
@@ -84,7 +84,7 @@ static esp_loader_error_t qt_write(esp_loader_port_t *port, const uint8_t *data,
 }
 
 static esp_loader_error_t qt_read(esp_loader_port_t *port, uint8_t *data, uint16_t size, uint32_t timeout) {
-    qt_port_t *p = container_of(port, qt_port_t, base);
+    qt_port_t *p = (qt_port_t *)port;
     uint16_t read_bytes = 0;
     QElapsedTimer t;
     t.start();
